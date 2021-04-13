@@ -18,3 +18,7 @@ into t3.txt and change the last to log.txt. Finally, delete tree.txt and path.tx
 4. Exit: this new command will print a list the last 4 commands to the terminal, a detailed list of all
 content of the current directory (like ls -l). Finally, it will wait for the user to hit the “return” key
 to terminate the shell and return the control to the original shell program on your machine
+
+
+
+# Collaboraters 
