@@ -2,7 +2,7 @@
 Command shell using C language 
 
 Following functions:
-Tree: this new command will create a directory and call it Dir0. Then it will change the working
+Tree*: this new command will create a directory and call it Dir0. Then it will change the working
 directory to Dir0, and create three empty text files namely, t1.txt, t2.txt, t3.txt, and one empty
 directory, called Dir1, inside it.
 List: this new command will clear the terminal screen and print a detailed list of all content of
