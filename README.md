@@ -21,7 +21,7 @@ to terminate the shell and return the control to the original shell program on y
 
 
 
-## Collaboraters 
+## Collaboraters: 
   * Tanzil
   * Tufayel
   * Myriam
