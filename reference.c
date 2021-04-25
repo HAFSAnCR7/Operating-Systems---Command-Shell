@@ -35,7 +35,6 @@ int main(int argc, char *argv[]) {
     printf("\033[0m");
     
     // FOR EXIT
-    
     printf("\033[1;36m"); // bold Cyan
     printf("exit:"); // exit command
     printf("\033[0m");
