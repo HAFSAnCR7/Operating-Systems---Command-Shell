@@ -11,10 +11,9 @@ int main(int argc, char *argv[]) {
     
     printf("\nThe last 4 commands were the following:\n"); // Essentially, what we have is: Print the last four(4) commands
     
-    printf("%s \033[1;34m\n\n", argv[1]); //need in order to print the last 4 commands. Need argv[1] here
-    // need %s 
+    printf("%s\n\n", argv[1]); //need in order to print the last 4 commands. Need argv[1] here
+    // need %s
     
-    // color blue(bold) for the directory info.
    
     pid_t fq = fork(); // Essentially: forking a child
     if (fq == -1){
@@ -23,6 +22,8 @@ int main(int argc, char *argv[]) {
     }
 
     else if(fq==0){ // Essentially we have: The child successfully forked
+        printf("\033[0;31mDetailed list of all content of the current directory\033[1;34m\n");
+        // regular color red and then blue(bold) for the directory info.
         execlp ("ls", "ls", "-la", NULL); // need or wont show a detailed list of all content of the current directory
         // The following essentially does: All of the files in the current directory with the add'l info. are shown when it executes a command
         //Executes a command that shows all of the files in the current directory with add'l information
