@@ -12,7 +12,8 @@ int main(int argc, char *argv[]) {
     printf("\nThe last 4 commands were the following:\n"); // Essentially, what we have is: Print the last four(4) commands
     
     printf("%s \033[1;34m\n\n", argv[1]); //need in order to print the last 4 commands. Need argv[1] here
-    // need %s to show the commands 
+    // need %s 
+    
     // color blue(bold) for the directory info.
    
     pid_t fq = fork(); // Essentially: forking a child
