@@ -33,7 +33,9 @@ void link_to_list(char *cmd) {
         tail = x; // set tail to x
 
         if (size == 4) // if size of 4 is reached, move head to the right (similar to queue)
+
             head = head->link;
+        
         else // if max size is not yet reached, keep incrementing list size
             size++;
     }
