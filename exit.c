@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         execlp ("ls", "ls", "-la", NULL); // need or wont show a detailed list of all content of the current directory
         // The following essentially does: All of the files in the current directory with the add'l info. are shown when it executes a command
         //Executes a command that shows all of the files in the current directory with add'l information
-        //Note: ls -l gives you various info. like permisions, owner of the file, size of the file or directory (in bytes), date and time of modification
+        //Note: ls -l gives you various info. like permissions, owner of the file, size of the file or directory (in bytes), date and time of modification
         //Note: ls -a shows you hidden files as well. Hidden files are the files beginning with a dot so (.)
         printf ("Excelp has essentially failed\n");
         // failure
