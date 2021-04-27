@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     }
 
     else if(fq==0){ // Essentially we have: The child successfully forked
-        printf("\033[0;31mDetailed list of all content of the current directory:\033[1;34m\n");
+        printf("\033[0;31mDetailed list of all content of the current directory\033[1;34m\n");
         // regular color red and then blue(bold) for the directory info.
         execlp ("ls", "ls", "-la", NULL); // need or wont show a detailed list of all content of the current directory
         // The following essentially does: All of the files in the current directory with the add'l info. are shown when it executes a command
