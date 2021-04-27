@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int tree(int argc, char *argv[]) {
+int main (int argc, char *argv[]) {
     
     int fd = fork(); // Child
     
