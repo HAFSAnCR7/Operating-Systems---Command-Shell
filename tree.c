@@ -13,7 +13,7 @@ int main (int argc, char *argv[]) {
     
     // Case 1: If the fork fails, then print the error message below
     if(fd < 0) {
-        print("Fork has failed...");
+        printf("Fork has failed...");
     }
     // Case 2: If fork() == 0, then make a new directory, "Dir0" and give it all access
     else if (fd == 0) {
