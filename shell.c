@@ -65,7 +65,7 @@ char* updateHistory() {
 int main(int argc, char *argv[]) {
     while(1) 
     { //loop will run until "exit" is typed
-        printf("\n♠️: ");
+        printf("\n♠️ : ");
         char *buffer = NULL;
         size_t len = 0;
         ssize_t lineSize  = 0;    //ssize_t byte count for returns error function 
