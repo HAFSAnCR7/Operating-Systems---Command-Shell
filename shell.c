@@ -65,17 +65,18 @@ char* updateHistory() {
 int main(int argc, char *argv[]) {
     while(1) 
     { //loop will run until "exit" is typed
-        printf("\n♠️ : ");
+        printf("\n♠️ : "); // we will use spade emoji instead of $
         char *buffer = NULL;
-        size_t len = 0;
+        size_t sizeT = 0;
         ssize_t lineSize  = 0;    //ssize_t byte count for returns error function 
-        lineSize  = getline(&buffer, &len, stdin); // use getline to store input into buffer
+        lineSize  = getline(&buffer, &sizeT, stdin); //  getline will store input into buffer. 
+                                                    //stdin is the input file handle
         
         if (lineSize  > 0 && buffer[lineSize -1] == '\n') // replace \n with \0
             buffer[--lineSize ] = '\0';
 
-        link_to_list(buffer); // add new command to linked list
-        char* info = updateHistory(); // update history
+        link_to_list(buffer); // command will be added to linked list
+        char* info = updateHistory(); // call updateHistory() and update the history
 
         pid_t pid = fork();
         if (pid < 0) {
@@ -89,15 +90,15 @@ int main(int argc, char *argv[]) {
             }
 
             else if (strcmp(buffer, "list") == 0) { // execute list() command
-                if (chdir("Dir0") == -1) // change dir, otherwise print message that dir doesn't exist
-                    printf("\033[1;31mDir0 does not exist!\033[0m\n");
+                if (chdir("Dir0") == -1) // use chdir to change dir,  
+                    printf("\033[1;31mDir0 does not exist!\033[0m\n");  // print message if dir doesn't exist
 
                 char *args[] = {"./list", buffer, NULL};
                 execv("../objectFile/list", args);
 
             }
             else if (strcmp(buffer, "path") == 0) { // execute path() command 
-                if (chdir("Dir0") == -1) // change dir
+                if (chdir("Dir0") == -1) // use chdir to change dir
                     printf("\033[1;31mDir0 does not exist!\033[0m\n"); //  print message if dir doesn't exist
 
                 char *args[] = {"./path", buffer, NULL};
@@ -107,13 +108,13 @@ int main(int argc, char *argv[]) {
                 printf("\033[1;33mTerminal Exit!\033[0m\n");
                 char *args[] = {"./exit", info, NULL};
 
-                if (chdir("Dir0") != -1) // try to change dir, otherwise execute in current dir
+                if (chdir("Dir0") != -1) // change dir
                     execv("../objectFile/exit", args);
                 else
                     execv("./objectFile/exit", args);
             }
 
-            else if (strcmp(buffer, "reference") == 0) { // execute reference() command
+            else if (strcmp(buffer, "reference") == 0) { // execute reference() command so user can see list of commands
                 char *args[] = {"./reference", buffer, NULL};
                 execv("./objectFile/reference", args);
             }
@@ -127,7 +128,7 @@ int main(int argc, char *argv[]) {
         wait(NULL); 
         if (strcmp(buffer, "exit") == 0){
             getchar();
-            break;
+            break;  // break loop
         }
     }
     
