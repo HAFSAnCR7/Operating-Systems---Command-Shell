@@ -41,9 +41,8 @@ void link_to_list(char *cmd) {
     }
 } 
 
-// command to get updated history
 char* updateHistory() {
-    char *cmdData = malloc(50); // store history of commands in a string (separated by commas)
+    char *cmdData = malloc(50); // commands will be stored in a string 
     strcpy(cmdData, "");
 
     struct Node* iterator = head;
@@ -72,7 +71,7 @@ int main(int argc, char *argv[]) {
         lineSize  = getline(&buffer, &sizeT, stdin); //  getline will store input into buffer. 
                                                     //stdin is the input file handle
         
-        if (lineSize  > 0 && buffer[lineSize -1] == '\n') // replace \n with \0
+        if (lineSize  > 0 && buffer[lineSize -1] == '\n') // remove trailing newline
             buffer[--lineSize ] = '\0';
 
         link_to_list(buffer); // command will be added to linked list
