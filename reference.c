@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     printf("\033[1;36m"); // bold Cyan
     printf("tree:"); // tree command
     printf("\033[0m");
-    printf("\033[01;35m"); // toggle bold Purple
+    printf("\033[01;35m"); // bold Purple
     printf(" This new command will create a directory and call it Dir0. Then it will change the working directory to Dir0, and create three empty text files namely; t1.txt, t2.txt, t3.txt, and one empty directory, called Dir1,inside it. \n\n");
     printf("\033[0m");
     
